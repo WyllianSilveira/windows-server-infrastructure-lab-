@@ -6,7 +6,7 @@ Demonstrar a capacidade prática de planejar, implantar e validar uma infraestru
 ---
 
 ## 🏗️ Topologia e Detalhes do Ambiente Virtual
-*   **Hypervisor:** Oracle VM VirtualBox (Hardware Virtual: Innotek GmbH VirtualBox)
+*   **Hypervisor:** Oracle VM VirtualBox 
 *   **Domain Controller (DC):** SERVIDOR1 (Windows Server 2019 Datacenter Evaluation)
 *   **Client Machine:** Windows 10 Pro
 *   **Nome do Domínio:** `empresa.local`
@@ -40,8 +40,7 @@ Demonstrar a capacidade prática de planejar, implantar e validar uma infraestru
     Get-ADOrganizationalUnit -Filter * | Select-Object Name, DistinguishedName | Format-Table
     ```
 *   **Evidência Visual:**
-    *(Insira o print do console 'Usuários e Computadores do Active Directory' mostrando suas OUs expandidas ou o output do PowerShell acima)*
-    ![Estrutura de OUs no Diretório](images/02-ou-structure.png)
+    ![Estrutura de OUs no Diretório](imagens/02-ou-structure.png)
 
 ---
 
