@@ -27,7 +27,7 @@ Demonstrar a capacidade prática de planejar, implantar e validar uma infraestru
     Get-Service -Name NTDS, ADWS, Kdc | Select-Object Name, Status
     ```
 *   **Evidência Visual:**
-    ![Configuração do Domínio e Servidor Local](images/01-server-properties.png)
+    ![Configuração do Domínio e Servidor Local](imagens/01-server-properties.png)
     *Nota: A imagem comprova as propriedades do sistema, o domínio ativo `empresa.local` e o endereçamento IP correspondente.*
 
 ---
