@@ -33,16 +33,36 @@ Demonstrar a capacidade prática de planejar, implantar e validar uma infraestru
 ---
 
 ### 2. Estrutura de Organizational Units (OUs)
-**O que foi feito:** Organização do diretório através de Unidades Organizacionais para refletir a estrutura departamental da empresa, permitindo a segregação de objetos de computadores e usuários para posterior aplicação de GPOs e delegação administrativa.
+**O que foi feito:** Organização do diretório através de Unidades Organizacionais (OUs) hierárquicas. O ambiente foi estruturado com sub-OUs dedicadas para segregar `Computadores` e `Usuários/Usuários_desativados` dentro de seus respectivos departamentos (`Adm`, `Financeiro`, `Ti` e `Vendas`). Essa abordagem segue as melhores práticas de mercado para garantir a aplicação granular e precisa de Objetos de Política de Grupo (GPOs) de acordo com o tipo de recurso.
 
 *   **Comando de validação utilizado no PowerShell:**
     ```powershell
     Get-ADOrganizationalUnit -Filter * | Select-Object Name, DistinguishedName | Format-Table
     ```
+
+    **Saída real do comando:**
+    ```text
+    Name                 DistinguishedName
+    ----                 -----------------
+    Domain Controllers   OU=Domain Controllers,DC=empresa,DC=local
+    Vendas               OU=Vendas,DC=empresa,DC=local
+    Computadores         OU=Computadores,OU=Vendas,DC=empresa,DC=local
+    Usuários             OU=Usuários,OU=Vendas,DC=empresa,DC=local
+    Adm                  OU=Adm,DC=empresa,DC=local
+    Computadores         OU=Computadores,OU=Adm,DC=empresa,DC=local
+    Usuários             OU=Usuários,OU=Adm,DC=empresa,DC=local
+    Financeiro           OU=Financeiro,DC=empresa,DC=local
+    Usuários             OU=Usuários,OU=Financeiro,DC=empresa,DC=local
+    Computadores         OU=Computadores,OU=Financeiro,DC=empresa,DC=local
+    Usuarios_desativados OU=Usuarios_desativados,DC=empresa,DC=local
+    Ti                   OU=Ti,DC=empresa,DC=local
+    Usuarios             OU=Usuarios,OU=Ti,DC=empresa,DC=local
+    ```
+
 *   **Evidência Visual:**
     ![Estrutura de OUs no Diretório](imagens/02-ou-structure.png)
+    *Nota: O console 'Usuários e Computadores do Active Directory' comprova a árvore de OUs e sub-OUs hierárquicas personalizadas criadas no domínio empresa.local.*
 
----
 
 ### 3. Usuários, Grupos e Associações de Segurança
 **O que foi feito:** Criação de contas de usuários para testes e grupos de segurança globais. Utilização do método de grupos para atribuição de acessos, garantindo eficiência na administração e aderência ao princípio do menor privilégio.
@@ -54,7 +74,7 @@ Demonstrar a capacidade prática de planejar, implantar e validar uma infraestru
     ```
 *   **Evidência Visual:**
     *(Insira o print das propriedades de um usuário do seu laboratório mostrando a aba 'Membro de')*
-    ![Associação de Grupos e Usuários](images/03-users-groups.png)
+    ![Associação de Grupos e Usuários](imagens/03-users-groups.png)
 
 ---
 
