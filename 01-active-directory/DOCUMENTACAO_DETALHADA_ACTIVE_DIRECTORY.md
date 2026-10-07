@@ -81,14 +81,14 @@ Demonstrar a capacidade prática de planejar, implantar e validar uma infraestru
 ---
 
 ### 3. Usuários, Grupos e Associações de Segurança
-**O que foi feito:** Criação de contas de usuários para testes e grupos de segurança globais. Utilização do método de grupos para atribuição de acessos, garantindo eficiência na administração e aderência ao princípio do menor privilégio.
+**O que foi feito:** Criação e provisionamento de contas de usuários baseadas em cenários corporativos reais dentro das Unidades Organizacionais correspondentes. A administração e atribuição de privilégios de acesso são estruturadas exclusivamente através de grupos de segurança globais, garantindo uma governança centralizada e em total conformidade com o princípio do menor privilégio.
 
 *   **Comando de validação utilizado no PowerShell:**
     ```powershell
     Get-ADUser -Filter * -SearchBase "OU=vendas,DC=empresa,DC=local" | Select-Object Name, SamAccountName
     ```
-    
-   **Saída real do comando:**
+
+    **Saída real do comando:**
     ```text
     Name              SamAccountName
     ----              --------------
@@ -101,9 +101,11 @@ Demonstrar a capacidade prática de planejar, implantar e validar uma infraestru
     Julpira Neves     julpiraneves
     Mariana Mendes    marianamendes
     ```
-    
+
 *   **Evidência Visual:**
     ![Associação de Grupos e Usuários](imagens/03-users-groups.png)
+    *Nota: A imagem comprova as propriedades e a aba "Membro de" de uma conta do diretório, demonstrando o vínculo do colaborador a um grupo de segurança estruturado.*
+
 
 ---
 
