@@ -1,8 +1,0 @@
-# Active Directory
-
-## Objetivo
-
-Implementar e administrar um ambiente de Active Directory utilizando
-Windows Server 2019 e Windows 10 em um ambiente virtualizado,
-explorando conceitos de domínio, usuários, grupos, Organizational Units
-(OUs) e administração de estações.
