@@ -103,9 +103,12 @@ Demonstrar a capacidade prática de planejar, implantar e validar uma infraestru
     ```
 
 *   **Evidência Visual:**
-    ![Associação de Grupos e Usuários](imagens/03-users-groups.png)
+    <br>
+    <p align="center">
+      <img src="imagens/03-users-groups.png" alt="Associação de Grupos e Usuários" width="70%">
+    </p>
+    
     *Nota: A imagem comprova as propriedades e a aba "Membro de" de uma conta do diretório, demonstrando o vínculo do colaborador a um grupo de segurança estruturado.*
-
 
 ---
 
