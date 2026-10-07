@@ -85,11 +85,24 @@ Demonstrar a capacidade prática de planejar, implantar e validar uma infraestru
 
 *   **Comando de validação utilizado no PowerShell:**
     ```powershell
-    # Substitua "NomeDaSuaOU" por uma OU real do seu ambiente para listar os usuários
-    Get-ADUser -Filter * -SearchBase "OU=NomeDaSuaOU,DC=empresa,DC=local" | Select-Object Name, SamAccountName
+    Get-ADUser -Filter * -SearchBase "OU=vendas,DC=empresa,DC=local" | Select-Object Name, SamAccountName
     ```
+    
+   **Saída real do comando:**
+    ```text
+    Name              SamAccountName
+    ----              --------------
+    João da Silva     convidado1
+    Maria da Graça    convidado2
+    Sebastião Salgado sebastiaosalgado
+    Débora Assis      deboraassis
+    Daniel Silva      danielsilva
+    Carlos Gomes      carlosgomes
+    Julpira Neves     julpiraneves
+    Mariana Mendes    marianamendes
+    ```
+    
 *   **Evidência Visual:**
-    *(Insira o print das propriedades de um usuário do seu laboratório mostrando a aba 'Membro de')*
     ![Associação de Grupos e Usuários](imagens/03-users-groups.png)
 
 ---
