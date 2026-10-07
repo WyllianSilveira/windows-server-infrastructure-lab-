@@ -19,16 +19,31 @@ Demonstrar a capacidade prática de planejar, implantar e validar uma infraestru
 ## 🔍 Diagnóstico e Evidências do Ambiente
 
 ### 1. Configuração do Domínio e Domain Controller
-**O que foi feito:** Promoção do servidor `SERVIDOR1` a Controlador de Domínio do domínio raiz `empresa.local`, com funções de Catálogo Global e DNS integradas no mesmo ativo.
+**O que foi feito:** Validação da promoção do servidor `SERVIDOR1` a Controlador de Domínio do domínio raiz `empresa.local`, além da verificação da integridade e execução dos serviços essenciais de identidade, autenticação e catálogo global (Active Directory Web Services, Kerberos Key Distribution Center e Active Directory Domain Services).
 
 *   **Comando de validação utilizado no PowerShell:**
     ```powershell
     Get-ADDomain | Select-Object Name, DomainMode, ForestMode
     Get-Service -Name NTDS, ADWS, Kdc | Select-Object Name, Status
     ```
+
+    **Saída real do comando:**
+    ```text
+    Name           DomainMode ForestMode
+    ----           ---------- ----------
+    empresa Windows2016Domain {}
+
+    Name  Status
+    ----  ------
+    ADWS Running
+    Kdc  Running
+    NTDS Running
+    ```
+
 *   **Evidência Visual:**
     ![Configuração do Domínio e Servidor Local](imagens/01-server-properties.png)
-    *Nota: A imagem comprova as propriedades do sistema, o domínio ativo `empresa.local` e o endereçamento IP correspondente.*
+    *Nota: A imagem do Gerenciador do Servidor comprova as propriedades locais do sistema, o domínio ativo empresa.local e os serviços de infraestrutura devidamente provisionados.*
+
 
 ---
 
@@ -63,6 +78,7 @@ Demonstrar a capacidade prática de planejar, implantar e validar uma infraestru
     ![Estrutura de OUs no Diretório](imagens/02-ou-structure.png)
     *Nota: O console 'Usuários e Computadores do Active Directory' comprova a árvore de OUs e sub-OUs hierárquicas personalizadas criadas no domínio empresa.local.*
 
+---
 
 ### 3. Usuários, Grupos e Associações de Segurança
 **O que foi feito:** Criação de contas de usuários para testes e grupos de segurança globais. Utilização do método de grupos para atribuição de acessos, garantindo eficiência na administração e aderência ao princípio do menor privilégio.
