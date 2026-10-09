@@ -112,16 +112,25 @@ Demonstrar a capacidade prática de planejar, implantar e validar uma infraestru
 
 ---
 
-### 4. Ingresso de Máquina Windows 10 no Domínio
-**O que foi feito:** Configuração manual do adaptador de rede da máquina cliente (Windows 10) apontando o servidor DNS primário para o IP `192.168.100.10`, permitindo a resolução de nomes do AD e a execução do Join da estação no domínio `empresa.local`.
+### 4. Ingresso de Máquina no Domínio (Domain Join)
+**O que foi feito:** Configuração dos adaptadores de rede dos ativos clientes apontando o DNS primário para o IP estático do Controlador de Domínio (`192.168.100.10`). Esse apontamento permitiu a correta resolução de nomes do Active Directory para a execução bem-sucedida do processo de Join da estação de trabalho `ADM1` e do servidor membro `SERVIDOR2` no domínio corporativo `empresa.local`.
 
 *   **Comando de validação utilizado no PowerShell do Servidor:**
     ```powershell
-    Get-ADComputer -Filter * | Select-Object Name, OperatingSystem, Enabled
+    Get-ADComputer -Filter * | Select-Object Name, OperatingSystem, Enabled | Format-Table
     ```
+
+    **Saída real do comando:**
+    ```text
+    Name      OperatingSystem Enabled
+    ----      --------------- -------
+    SERVIDOR1                    True
+    ADM1                         True
+    SERVIDOR2                    True
+    ```
+    
 *   **Evidência Visual:**
-    *(Insira o print da tela de propriedades do sistema do Windows 10 cliente mostrando o pertencimento ao domínio empresa.local)*
-    ![Estação de Trabalho no Domínio](images/04-domain-join.png)
+    ![Estação de Trabalho no Domínio](imagens/04-domain-join.png)
 
 ---
 
