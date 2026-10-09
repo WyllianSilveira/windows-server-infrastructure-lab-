@@ -143,7 +143,7 @@ Demonstrar a capacidade prática de planejar, implantar e validar uma infraestru
     net user %username% /domain
     ```
 *   **Evidência Visual:**
-    ![Validação de Sessão do Usuário](images/05-user-login.png)
+    ![Validação de Sessão do Usuário](imagens/05-user-login.png)
 
 ---
 
