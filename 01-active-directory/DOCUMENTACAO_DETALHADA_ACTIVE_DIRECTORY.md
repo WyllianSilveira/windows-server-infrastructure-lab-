@@ -143,7 +143,6 @@ Demonstrar a capacidade prática de planejar, implantar e validar uma infraestru
     net user %username% /domain
     ```
 *   **Evidência Visual:**
-    *(Insira o print do CMD da máquina Windows 10 com o resultado do whoami mostrando 'empresa\nome-do-usuario')*
     ![Validação de Sessão do Usuário](images/05-user-login.png)
 
 ---
