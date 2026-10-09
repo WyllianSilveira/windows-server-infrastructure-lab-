@@ -151,6 +151,6 @@ Demonstrar a capacidade prática de planejar, implantar e validar uma infraestru
 **O que foi feito:** Configuração e uso das Ferramentas de Administração de Servidor Remoto (RSAT) instaladas no Windows 10 cliente, demonstrando a boa prática de gerenciar o Active Directory sem a necessidade de abrir sessões RDP ou logar localmente no Domain Controller.
 
 *   **Como visualizar a evidência:** Abrir o console `dsa.msc` (Usuários e Computadores do AD) diretamente da sua estação de trabalho Windows 10 conectada ao domínio.
+*   
 *   **Evidência Visual:**
-    *(Insira o print do console de gerenciamento do AD rodando dentro da interface do Windows 10)*
-    ![Administração via RSAT no Cliente](images/06-rsat-management.png)
+    ![Administração via RSAT no Cliente](imagens/06-rsat-management.png)
