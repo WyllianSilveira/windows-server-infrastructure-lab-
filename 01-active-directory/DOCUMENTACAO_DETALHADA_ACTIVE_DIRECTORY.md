@@ -130,7 +130,7 @@ Demonstrar a capacidade prática de planejar, implantar e validar uma infraestru
     ```
     
 *   **Evidência Visual:**
-    ![Estação de Trabalho no Domínio](imagens/04-domain-join.png)
+    ![Estação de Trabalho no Domínio](imagens/04-domain-join.png.png)
 
 ---
 
